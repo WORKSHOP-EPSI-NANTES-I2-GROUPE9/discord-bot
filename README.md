@@ -21,7 +21,7 @@ docker build -t discord-bot .
 ```
 run image DONT FORGET ENVIRONNMENT
 ```sh
-docker run --network=host -e BOT_TOKEN=NzgxMDcxNjcyNzM2MjE5MTU3.X74Trg.aifhVrKFfn3tFf6klI3Fs1MTu34  -e SENTIMENT_API_URL=http://localhost:5000 discord-bot
+docker run -e BOT_TOKEN=XXXX -e SENTIMENT_API_URL=http://localhost:5000 discord-bot
 ```
 
 
