@@ -22,13 +22,14 @@ const client = new Discord.Client();
 // Stateful because POC, otherwise should be stored in database
 let channelToxicity = new ToxicityMap() // Map(String channelName, float[] predictions)
 let userToxicity = new ToxicityMap() // Map(String userId, float[] predictions)
-
+<
 client.on("message", msg => {
     if (msg.author.bot) return;
 
     axios.post(apiUrl, {message: msg.cleanContent})
         .then(res => res.data)
         .then(data => {
+            console.log(msg.channel.name + ":" + msg.author.id + ":" + msg.cleanContent + ":" + data.percentage)
             if (data.percentage < DELETE_THRESHOLD)
                 return msg.delete({reason: "No toxicity !"})
 
