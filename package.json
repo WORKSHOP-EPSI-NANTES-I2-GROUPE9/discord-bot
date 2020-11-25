@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/WORKSHOP-EPSI-NANTES-I2-GROUPE9/discord-bot#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "discord.js": "^12.5.0",
     "dotenv-cli": "^4.0.0"
   },
