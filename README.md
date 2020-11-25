@@ -1,8 +1,6 @@
 # discord-bot
 Bot that uses IA to moderates messages
 
-# Start 
-
 ## Running server 
 with nodemon
 ```sh
@@ -26,5 +24,5 @@ docker run -e BOT_TOKEN=XXXX -e SENTIMENT_API_URL=http://localhost:5000 discord-
 
 
 # Env variables
-BOT_TOKEN
+BOT_TOKEN=  
 SENTIMENT_API_URL=http://localhost:5000 
