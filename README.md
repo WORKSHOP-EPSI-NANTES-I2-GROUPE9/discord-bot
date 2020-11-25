@@ -26,3 +26,6 @@ docker run -e BOT_TOKEN=XXXX -e SENTIMENT_API_URL=http://localhost:5000 discord-
 # Env variables
 BOT_TOKEN=  
 SENTIMENT_API_URL=http://localhost:5000 
+DELETE_THRESHOLD= (default to .3)
+NEGATIVE_THRESHOLD= (default to .4)
+POSITIVE_THRESHOLD= (default to .7)
