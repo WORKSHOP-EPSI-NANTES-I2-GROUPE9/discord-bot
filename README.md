@@ -33,3 +33,6 @@ docker run -e BOT_TOKEN=XXXX -e SENTIMENT_API_URL=http://localhost:5000 discord-
 | NEGATIVE_THRESHOLD | 0.4 |
 | POSITIVE_THRESHOLD | 0.7 |
 
+ # log
+
+msg.channel.name + ":" + channelToxicity.average(msg.channel.name) + ":" + msg.author.id + ":" + msg.cleanContent + ":" + data.percentage)

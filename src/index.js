@@ -29,20 +29,20 @@ const handleNewMessage = msg => {
     axios.post(apiUrl, {message: msg.cleanContent})
         .then(res => res.data)
         .then(data => {
-            if (data.percentage < DELETE_THRESHOLD) {
+            if (data.score < DELETE_THRESHOLD) {
                 msg.author.send("No toxicity allowed ! Your message was deleted");
                 return msg.delete({reason: "No toxicity !"})
             }
-            if (data.percentage < NEGATIVE_THRESHOLD)
+            if (data.score < NEGATIVE_THRESHOLD)
                 msg.author.send("Warning: Be polite !");
 
-            channelToxicity.add(msg.channel.name, data.percentage)
+            channelToxicity.add(msg.channel.name, data.score)
 
-            if (channelToxicity.mean(msg.channel.name) < NEGATIVE_THRESHOLD)
+            if (channelToxicity.average(msg.channel.name) < NEGATIVE_THRESHOLD)
                 msg.channel.send("@here Warning: Be polite !");
 
-            console.log(msg.channel.name + ":" + channelToxicity.mean(msg.channel.name) + ":" + msg.author.id + ":" + msg.cleanContent + ":" + data.percentage)
-     })
+            console.log(msg.channel.name + ":" + channelToxicity.average(msg.channel.name) + ":" + msg.author.id + ":" + msg.cleanContent + ":" + data.score)
+     }).catch(console.log)
 }
 
 client.on("message", handleNewMessage);

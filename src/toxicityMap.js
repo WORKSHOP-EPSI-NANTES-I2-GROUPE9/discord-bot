@@ -11,7 +11,7 @@ class ToxicityMap {
         this.map.set(key, newValues)
     }
 
-    mean (key) {
+    average (key) {
         if (this.map.get(key) == null || this.map.get(key).length == 0) return undefined
         const sum = this.map.get(key).reduce((sum, current) => sum + current)
         return sum/this.map.get(key).length
